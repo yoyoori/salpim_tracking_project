@@ -227,7 +227,7 @@ streamlit run app.py
 ## 10. 프로젝트 구조
 
 ```text
-salpim-fall-detection/
+salpim_trackig_project/
 
 ├── notebooks/
 │   ├── 01_skeleton_preprocessing.ipynb
