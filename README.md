@@ -94,7 +94,7 @@ ETRI 고령자 일상행동 인식 데이터셋 사용
 
 ### Skeleton 데이터 전처리
 
-ETRI RGB 영상에서 추출한 Skeleton 데이터에 대해 학습에 적합한 형태로 전처리를 수행하였다.
+ETRI RGB 영상으로부터 Skeleton 데이터를 추출하여 행동 인식 모델 학습에 적합한 형태로 전처리하였다.
 
 * MediaPipe Pose를 이용하여 주요 관절 좌표 추출
 * Hip Center 기준 상대 좌표 정규화 및 Body Scale 정규화 적용
