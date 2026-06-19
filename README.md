@@ -191,8 +191,9 @@ RGB 영상 특징과 Skeleton 특징을 결합한 Fusion 모델 사용
 | Full Pipeline FPS | 12.38 FPS |
 
 ※ FPS는 YOLO Person Detection, ByteTrack Tracking,
-MediaPipe Pose, Skeleton 생성, Fusion 모델 추론을 포함한
+MediaPipe Pose, Skeleton 생성, Fusion 모델 추론을 포함한 
 전체 파이프라인 기준으로 측정하였다.
+
 ---
 
 ## 8. 설치 방법
