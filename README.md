@@ -96,15 +96,13 @@ ETRI 고령자 일상행동 인식 데이터셋 사용
 
 ETRI RGB 영상에서 추출한 Skeleton 데이터에 대해 학습에 적합한 형태로 전처리를 수행하였다.
 
-* MediaPipe Pose를 이용하여 33개 랜드마크를 추출한 뒤, 행동 인식에 중요한 17개 주요 관절만 선택
-* Hip Center를 기준으로 상대 좌표 정규화 수행
-* Shoulder Center와 Hip Center 간 거리를 기준으로 Body Scale 정규화 수행
-* 관절 검출이 누락된 프레임은 선형 보간(Interpolation)을 통해 결측치 보완
-* 프레임 간 좌표 변동을 완화하기 위해 Moving Average Smoothing 적용
-* 프레임 간 차분을 계산하여 Velocity Feature(vx, vy, vz) 생성
+* MediaPipe Pose를 이용하여 주요 관절 좌표 추출
+* Hip Center 기준 상대 좌표 정규화 및 Body Scale 정규화 적용
+* 결측치 보간(Interpolation) 및 Moving Average Smoothing 수행
+* Velocity Feature(vx, vy, vz) 생성
 * 모든 시퀀스 길이를 90프레임으로 통일
 * Person ID 기반 Train / Validation / Test 분할
-* 최종 입력 형태를 (90, 17, 6) 구조로 변환하여 저장 ([x, y, z, vx, vy, vz])
+* 최종 입력 형태 (90, 17, 6) 구조로 구성 ([x, y, z, vx, vy, vz])
 
 ---
 
