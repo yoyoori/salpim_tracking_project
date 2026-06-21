@@ -21,17 +21,36 @@ SALPIM은 고령자의 일상 행동을 인식하고 낙상(Fall Down)과 같은
 
 ## 2. 프로젝트 실행 화면
 
-### 메인 화면
+### 1) 업로드 및 설정 화면
 
-(실행 화면 캡처 추가 예정)
+- 이미지 및 영상 업로드
+- Confidence Threshold 설정
+- 프레임 전송 간격 설정
+- Bounding Box 표시 옵션 설정
 
-### 행동 인식 결과
+[업로드 및 설정 화면 캡처]
 
-(실행 화면 캡처 추가 예정)
+---
 
-### 실시간 추론 결과
+### 2) 분석 진행 화면
 
-(실행 화면 캡처 추가 예정)
+- FastAPI 서버로 프레임 전송
+- 실시간 분석 진행 상황 표시
+- 90프레임 Sequence 누적 및 행동 예측 수행
+
+[분석 진행 화면 캡처]
+
+---
+
+### 3) 결과 확인 화면
+
+- Bounding Box 및 Skeleton 시각화
+- 행동 클래스 및 Confidence Score 출력
+- 위험 행동 감지 결과 표시
+- 위험 행동 발생 시점 확인
+- 행동 변화 타임라인 제공
+
+[결과 확인 화면 캡처]
 
 ---
 
@@ -196,37 +215,131 @@ MediaPipe Pose, Skeleton 생성, Fusion 모델 추론을 포함한
 
 ## 8. 설치 방법
 
-### Repository Clone
+### 1) Repository Clone
 
 ```bash
-git clone <repository_url>
-cd salpim-fall-detection
+git clone https://github.com/yoyoori/salpim_tracking_project.git
+cd salpim_tracking_project
 ```
 
-### Dependency Installation
+### 2) Python 가상환경 생성
+
+> ※ Python 3.11 환경을 권장합니다.
+
+```bash
+python -m venv venv
+```
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / Mac**
+
+```bash
+source venv/bin/activate
+```
+
+### 3) 라이브러리 설치
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### 4) 모델 파일 확인
+
+다음 파일이 `models` 폴더에 존재해야 합니다.
+
+```text
+models/
+├── fusion_mediapipe_pose_best.pth
+├── full_fusion_single.onnx
+└── label_map.json
+```
+
+### 5) 실행 환경
+
+* Python 3.11 권장
+* Windows 10 / Windows 11 환경에서 테스트
+* Python 3.12 이상에서는 일부 라이브러리(MediaPipe, ONNX Runtime) 설치 오류가 발생할 수 있습니다.
+
 ---
 
 ## 9. 실행 방법
 
+### 1) FastAPI 서버 실행
 
-### 웹 애플리케이션 실행
+먼저 터미널을 열고 FastAPI 서버를 실행합니다.
+
+```bash
+uvicorn api:app --reload
+```
+
+기본 주소:
+
+```text
+http://127.0.0.1:8000
+```
+
+### 2) Streamlit 웹 애플리케이션 실행
+
+새 터미널을 열고 Streamlit 애플리케이션을 실행합니다.
 
 ```bash
 streamlit run app.py
 ```
 
+기본 주소:
+
+```text
+http://localhost:8501
+```
+
+### 3) 사용 방법
+
+1. Streamlit 웹 페이지 접속
+2. 이미지 또는 영상 업로드
+3. Confidence Threshold 설정
+4. 프레임 전송 간격 설정
+5. 분석 시작 버튼 클릭
+6. 행동 인식 결과 및 위험 행동 감지 결과 확인
+
+### 실행 순서
+
+```text
+터미널 1
+↓
+uvicorn api:app --reload
+
+터미널 2
+↓
+streamlit run app.py
+
+브라우저 접속
+↓
+http://localhost:8501
+```
 ---
 
 ## 10. 프로젝트 구조
 
 ```text
 salpim_trackig_project/
-
+├── assets/
+│   └── alarm.wav
+│
+├── models/
+│   ├── fusion_mediapipe_pose_best.pth
+│   ├── full_fusion_single.onnx
+│   └── label_map.json
+|
+├── models/
+│   ├── fusion_mediapipe_pose_best.pth
+│   ├── full_fusion_single.onnx
+│   └── label_map.json
+|
 ├── notebooks/
 │   ├── 01_skeleton_preprocessing.ipynb
 │   ├── 02_rgb_preprocessing.ipynb
@@ -237,10 +350,10 @@ salpim_trackig_project/
 │   ├── 07_fusion_training.ipynb
 │   └── 08_fusion_inference.ipynb
 │
-├── models/
-│   ├── fusion_mediapipe_pose_best.pth
-│   ├── full_fusion_single.onnx
-│   └── label_map.json
+├── api.py
+├── app.py
+├── yolov8n.pt
+├── requirements.txt
 ├── docs/
 ├── requirements.txt
 └── README.md
