@@ -124,6 +124,34 @@ ETRI RGB 영상으로부터 Skeleton 데이터를 추출하여 행동 인식 모
 * Person ID 기반 Train / Validation / Test 분할
 * 최종 입력 형태 (90, 17, 6) 구조로 구성 ([x, y, z, vx, vy, vz])
 
+```text
+ETRI RGB 영상
+    ↓
+Frame Extraction (10 FPS)
+    ↓
+224×224 Resize
+    ↓
+Train / Validation / Test Split
+    ↓
+RGB Dataset 생성
+
+ETRI RGB 영상
+    ↓
+MediaPipe Pose
+    ↓
+17개 관절 추출
+    ↓
+Hip Center 정규화
+    ↓
+Interpolation + Smoothing
+    ↓
+Velocity 생성
+    ↓
+90 Frame Sequence 생성
+    ↓
+Skeleton Dataset 생성
+```
+
 ---
 
 ## 5. 시스템 아키텍처
