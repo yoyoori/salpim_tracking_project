@@ -385,4 +385,16 @@ salpim_trackig_project/
 * 행동 인식 모델 성능 평가 및 실험 결과 분석
 * Github 코드 정리
 
+---
+
+## 12. 추가 자료 (Google Drive)
+
+본 프로젝트의 전처리 데이터, 학습 모델, 실험 결과, Colab Notebook 등 개발 과정에서 생성된 산출물은 아래 Google Drive에서 확인할 수 있습니다.
+
+ETRI 원본 데이터셋은 저장소 용량 제한으로 인해 GitHub에 포함하지 않았으며, 전체 실험 환경과 중간 산출물은 Google Drive를 통해 제공합니다.
+
+### Google Drive
+
+(https://drive.google.com/drive/folders/1OTryNSxLe8QgJd8FzzIevEPVdi_6aWkI)
+
 
