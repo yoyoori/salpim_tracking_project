@@ -28,7 +28,7 @@ SALPIM은 고령자의 일상 행동을 인식하고 낙상(Fall Down)과 같은
 - 프레임 전송 간격 설정
 - Bounding Box 표시 옵션 설정
 
-[업로드 및 설정 화면 캡처]
+<img src="docs/upload.png" width="900">
 
 ---
 
@@ -38,7 +38,7 @@ SALPIM은 고령자의 일상 행동을 인식하고 낙상(Fall Down)과 같은
 - 실시간 분석 진행 상황 표시
 - 90프레임 Sequence 누적 및 행동 예측 수행
 
-[분석 진행 화면 캡처]
+<img src="docs/analysis.png" width="900">
 
 ---
 
@@ -48,9 +48,10 @@ SALPIM은 고령자의 일상 행동을 인식하고 낙상(Fall Down)과 같은
 - 행동 클래스 및 Confidence Score 출력
 - 위험 행동 감지 결과 표시
 - 위험 행동 발생 시점 확인
-- 행동 변화 타임라인 제공
+<img src="docs/result1.png" width="900">
 
-[결과 확인 화면 캡처]
+- 행동 변화 타임라인 제공
+<img src="docs/result2.png" width="900">
 
 ---
 
