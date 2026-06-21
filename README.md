@@ -330,6 +330,11 @@ http://localhost:8501
 salpim_trackig_project/
 ├── assets/
 │   └── alarm.wav
+├── docs/
+│   ├── analysis.png
+│   ├── result1.png
+│   ├── result2.png
+│   └── upload.png
 │
 ├── models/
 │   ├── fusion_mediapipe_pose_best.pth
@@ -354,8 +359,6 @@ salpim_trackig_project/
 ├── api.py
 ├── app.py
 ├── yolov8n.pt
-├── requirements.txt
-├── docs/
 ├── requirements.txt
 └── README.md
 ```
