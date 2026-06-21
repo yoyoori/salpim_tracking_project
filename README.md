@@ -39,7 +39,7 @@ SALPIM은 고령자의 일상 행동을 인식하고 낙상(Fall Down)과 같은
 
 ### Development Environment
 
-* Python 3.10
+* Python 3.11
 * Google Colab
 * PyTorch
 * ONNX Runtime
